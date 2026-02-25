@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+# description: tell the color of a fruit
+# error/warning messages are redirected to file descriptor 2 which is 'stderr'
+# so if the script is used in a chain, it won't cause wrong interpretation.
+
+fruit="$1"
+
+if [[ $# -ne 1 ]]; then
+	echo "The script requires one fruit name!"
+	echo "Usage: $0 <fruit>" >&2
+	exit 1
+fi
+
+case "$fruit" in
+	apple)
+		echo "An apple can be red or green."
+		;;
+	banana)
+		echo "A banana is yellow."
+		;;
+	*)
+		echo "Available fruits are apple and banana." >&2
+		exit 1
+		;;
+esac
