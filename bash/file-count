@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+dir_path="$HOME"
+file_count=$(ls -a "$dir_path" | wc -l)
+today=$(date +%Y-%m-%d)
+
+echo "=== Dotfiles Info ==="
+echo "User: $USER"
+echo "Dotfiles location: $dir_path"
+echo "Files tracked: $file_count"
+echo "Date: $today"
