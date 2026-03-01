@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+# Finds files with '.txt' extension and shows a message with the file's name.
+# With the condition chech and 'continue' keyword, make sure if there is no file, the variable doesn't become '.txt'
+
+for file in *.txt; do
+	[[ -f "$file" ]] || continue
+	echo "Processing ${file}"
+done

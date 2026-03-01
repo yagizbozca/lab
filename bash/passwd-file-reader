@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# This script reads the /etc/passwd file and displays the content
+
+while IFS=: read -r user _ uid gid _ home shell; do
+	echo "$user (UID $uid) uses $shell"
+done < /etc/passwd
