@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+# An example of 'local' keyword in functions.
+
+# A function can be defined as;
+# test() {
+# or;
+function test {
+	# And arguments are accessed as exactly
+	# they are with a shell script.
+	echo "$1"
+	local name="Local name"
+	echo "Name inside of function: $name"
+}
+
+name="Global name"
+# You can just pass an argument.
+test "An argument"
+echo "Name outside of function: $name"

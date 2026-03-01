@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+# An example of using arrays with functions.
+
+list_todo() {
+	local list=("$@")
+	local number=1
+	# Always use double quotes to handle space
+	# separated values properly.
+	for item in "${list[@]}"; do
+		echo "$number. $item"
+		((number++))
+	done
+}
+
+todo=("Water plants" "Buy eggs" "Take out trash")
+list_todo "${todo[@]}"

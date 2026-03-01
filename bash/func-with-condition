@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+# An example of using function exit code as 'if' condition
+
+is_even() {
+	local number="$1"
+	((number % 2 == 0))
+}
+
+if is_even 4; then
+	echo "4 is an even number."
+fi
