@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+# Description: a cutom filter that converts a line into a markdown link.
+
+read -r url
+echo "[$url]($url)"
