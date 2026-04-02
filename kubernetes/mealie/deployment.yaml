@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mealie
-  name: mealie
-  namespace: mealie
+    app: mealie-deployment-label
+  name: mealie-deployment
+  namespace: mealie-namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mealie
+      app: mealie-deployment-selector
   template:
     metadata:
       labels:
-        app: mealie
+        app: mealie-deployment-selector
     spec:
       containers:
       - image: ghcr.io/mealie-recipes/mealie:v3.13.0
-        name: mealie
+        name: mealie-deployment-container
         ports:
         - containerPort: 9000
