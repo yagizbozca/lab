@@ -20,3 +20,10 @@ spec:
         name: mealie-deployment-container
         ports:
         - containerPort: 9000
+        volumeMounts:
+        - mountPath: "/app/data"
+          name: mealie-deployment-volume
+      volumes:
+        - name: mealie-deployment-volume
+          persistentVolumeClaim:
+            claimName: mealie-persist-vol-claim
